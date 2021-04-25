@@ -1,5 +1,6 @@
 import string
 
+# Here I check if this text is a pangram.
 def ispangram(str1, alphabet=string.ascii_lowercase):
     str1 = str1.replace(' ', '')
     print(len(str1))
