@@ -13,10 +13,16 @@ def make_a_move(count, fields):
         num = input("Player 1, Make your move: ")
     else:
         num = input("Player 2, Make your move: ")
-    while not num.isdigit():
-        num = input("Not a digit: ")
-    while num in fields:
-        num = input("This field is already taken! Choose another one: ")
+    while True:
+        if not num.isdigit():
+            num = input("Not a digit: ")
+        elif num in fields:
+            num = input("This field is already taken! Choose another one: ")
+        elif num not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            num = input("You have to choose a number between 1 and 9: ")
+        else:
+            break
+
     fields.append(num)
     return int(num)
 
